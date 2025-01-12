@@ -11,6 +11,7 @@ app.use(
   createProxyMiddleware({
     target: target,
     changeOrigin: true,
+    ws: true, // Habilitar redirección de WebSockets
     onError: (err, req, res) => {
       res.status(500).send("Algo salió mal con el proxy.");
     },
