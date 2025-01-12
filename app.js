@@ -11,10 +11,6 @@ app.use(
   createProxyMiddleware({
     target: target,
     changeOrigin: true,
-    onProxyReq: (proxyReq, req, res) => {
-      // Añadir encabezados personalizados si es necesario
-      proxyReq.setHeader("X-Special-Proxy-Header", "foobar");
-    },
     onError: (err, req, res) => {
       res.status(500).send("Algo salió mal con el proxy.");
     },
